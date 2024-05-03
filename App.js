@@ -1,20 +1,20 @@
 import React, { useState } from 'react';//Zendejas Mendez Obed Aaron 6BVPG
 import { View, Text, TextInput, Button, StyleSheet, FlatList } from 'react-native';
-//Zendejas Mendez Obed Aaron 6BVPG
+
 export default function App() {
   const [enteredGoalText, setEnteredGoalText] = useState('');
   const [goals, setGoals] = useState([]);
-//Zendejas Mendez Obed Aaron 6BVPG
+
   function handleInputGoal(enteredText) {//Zendejas Mendez Obed Aaron 6BVPG
     console.log(enteredText);//Zendejas Mendez Obed Aaron 6BVPG
     setEnteredGoalText(enteredText);//Zendejas Mendez Obed Aaron 6BVPG
   }//Zendejas Mendez Obed Aaron 6BVPG
-//Zendejas Mendez Obed Aaron 6BVPG
+
   function handleAddGoal() {//Zendejas Mendez Obed Aaron 6BVPG
     console.log(enteredGoalText);//Zendejas Mendez Obed Aaron 6BVPG
     setGoals([...goals, { text: enteredGoalText, key: Math.random().toString() }]);
   }
-//Zendejas Mendez Obed Aaron 6BVPG
+
   return (//Zendejas Mendez Obed Aaron 6BVPG
     <View style={styles.container}>
       <View style={styles.inputContainer}>
