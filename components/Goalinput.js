@@ -1,56 +1,55 @@
-import { useState } from "react"; // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-import { View, TextInput, Button, StyleSheet } from "react-native"; // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
+import { useState } from "react"
+import { View, TextInput, Button, StyleSheet} from "react-native"
 
-function GoalInput({ onAddGoal }) { // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-  const [enteredGoalText, setEnteredGoalText] = useState(""); // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
+function GoalInput({onAddGoal}){
 
-  function handleInputGoal(enteredText) {
-    console.log(enteredText); // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-    setEnteredGoalText(enteredText); // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-  }
+    const [enterdGoalText, setEnteredGoalText] = useState('')
 
-  function addGoalHandler() {
-    onAddGoal(enteredText); // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-    setEnteredGoalText(""); // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-    console.log("addGoalHandler"); // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-  }
+    function handleInputGoal(enteredText){
+        //console.log(enteredText)
+        setEnteredGoalText(enteredText)
+    }
 
-  return (
-    <View style={StyleSheet.inputContainer}> {/* ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG */}
-      <TextInput
-        style={StyleSheet.TextInput} // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-        placeholder="Your Goal" // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-        onChangeText={handleInputGoal} // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-        value={enteredGoalText} // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      />
+    function addGoalHandler(){
+        onAddGoal(enterdGoalText)
+        setEnteredGoalText('')
+        console.log('addGoalHandler')
+    }
 
-      <Button
-        title="Add Goals" // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-        color={"#A3FFD6"} // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-        onPress={addGoalHandler} // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      />
-    </View>
-  );
+    return(
+        <View style={StyleSheet.inputContainer}>
+            <TextInput 
+            style={StyleSheet.textInput}
+            placeholder='Your Goal'
+            onChangeText={handleInputGoal}
+            value={enterdGoalText} />
+            
+                <Button 
+                title="Add Goal"
+                color={'#FC4100'}
+                onPress={addGoalHandler} />
+        </View>
+    )
 }
 
-export default GoalInput; // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
+export default GoalInput
 
-const styles = StyleSheet.create({ // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-  inputContainer: { // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      flex: 1, // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      flexDirection: 'row', // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      justifyContent: 'space-between', // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      alignItems: 'center', // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      marginBottom: 20, // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      borderBottomWidth: 1, // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      borderBottomColor: '#279327' // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-  },
-  textInput: {
-      borderWidth: 1, // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      borderColor: '#cccccc', // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      width: '80%', // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      marginRight: 3, // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      padding: 8, // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-      borderRadius: 5, // ESTE CODIGO ES ROBADO DE ZENDEJAS MENDEZ 6BVPG
-  }
+const styles = stylesSheet.create({
+    inputContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#7BC9FF'
+    },
+    textInput: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        width: '80%',
+        marginRigth: 3,
+        padding: 8,
+        borderRadius: 3,
+    }
 })
